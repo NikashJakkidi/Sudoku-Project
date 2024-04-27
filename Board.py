@@ -28,7 +28,8 @@ class Board (Cell):
     def draw(self):
         for row in self.cells:
             for cell in row:
-                cell.draw()
+                if cell != 0 and cell is not None:
+                    cell.draw()
         # Draw bold lines for 3x3 boxes
         for i in range(0, self.width, Board.CELL_SIZE * 3):
             pygame.draw.line(self.screen, Board.BLACK, (i, 0), (i, self.height), 4)
