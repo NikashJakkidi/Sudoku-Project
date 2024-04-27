@@ -126,6 +126,41 @@ pygame.time.wait(10000)
     #pygame.draw.rect(screen, (255, 165, 0), (425, 400, 125, 40))
     #screen.blit(quit, quit_rect)
 '''
+ if event.type == pygame.KEYDOWN:
+    if event.key == pygame.K_1:
+        cell.set_sketched_value(1)
+        board.sketch(1)
+    if event.key == pygame.K_2:
+        cell.set_sketched_value(2)
+        board.sketch(1)
+    if event.key == pygame.K_3:
+        cell.set_sketched_value(3)
+        board.sketch(1)
+    if event.key == pygame.K_4:
+        cell.set_sketched_value(4)
+        board.sketch(1)
+    if event.key == pygame.K_5:
+        cell.set_sketched_value(5)
+        board.sketch(1)
+    if event.key == pygame.K_6:
+        cell.set_sketched_value(6)
+        board.sketch(1)
+    if event.key == pygame.K_7:
+        cell.set_sketched_value(7)
+        board.sketch(1)
+    if event.key == pygame.K_8:
+        cell.set_sketched_value(8)
+        board.sketch(1)
+    if event.key == pygame.K_9:
+        cell.set_sketched_value(9)
+        board.sketch(1)
+    if event.key == pygame.K_ENTER:
+        if cell.sketeched_value != 0:
+            board.place_number(cell.sketehced_value)
+        else:
+            break
+
+
 #Game Over Screen
 g_over = (Board.FONT).render('Game Over:(', 0, Board.BLACK)
 g_over_rect = g_over.get_rect(center=(297, 150))
@@ -143,5 +178,7 @@ exit_diff = Board.FONT.render('Exit', 0, Board.BLACK)
 exit_rect = exit_diff.get_rect(center=(300, 420))
 pygame.draw.rect(screen, (255, 165, 0), (475 / 2, 400, 125, 40))
 screen.blit(exit_diff, exit_rect)
+
+
 
 '''
