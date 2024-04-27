@@ -101,3 +101,21 @@ while True:
    #         pygame.quit()
    #         sys.exit()
 
+
+#Game Over Screen
+#g_over = (Board.FONT).render('Game Over:(', 0, Board.BLACK)
+#g_over_rect = g_over.get_rect(center=(297, 150))
+#screen.blit(g_over, g_over_rect)
+#rstart_diff = Board.FONT.render('Restart', 0, Board.BLACK)
+#rstart_rect = rstart_diff.get_rect(center=(300, 420))
+#pygame.draw.rect(screen, (255, 165, 0), (475 / 2, 400, 125, 40))
+s#creen.blit(rstart_diff, rstart_rect)
+
+#Game Won Screen
+#g_won = (Board.FONT).render('Game Won!', 0, Board.BLACK)
+#g_won_rect = g_won.get_rect(center=(297, 150))
+#screen.blit(g_won, g_won_rect)
+#exit_diff = Board.FONT.render('Exit', 0, Board.BLACK)
+#exit_rect = exit_diff.get_rect(center=(300, 420))
+#pygame.draw.rect(screen, (255, 165, 0), (475 / 2, 400, 125, 40))
+s#creen.blit(exit_diff, exit_rect)
