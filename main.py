@@ -60,6 +60,21 @@ while True:
     board = Board(Board.SCREEN_WIDTH, Board.SCREEN_HEIGHT,screen,  difficulty)
     board.draw()
 
+    #reset, restart, and quit buttons(location needs to be changed)
+    reset = Board.FONT.render('RESET', 0, Board.BLACK)
+    reset_rect = reset.get_rect(center=(110, 420))
+    pygame.draw.rect(screen, (255, 165, 0), (50, 400, 125, 40))
+    screen.blit(reset, reset_rect)
+
+    restart = Board.FONT.render('MEDIUM', 0, Board.BLACK)
+    restart_rect = restart.get_rect(center=(300, 420))
+    pygame.draw.rect(screen, (255, 165, 0), (475 / 2, 400, 125, 40))
+    screen.blit(restart, restart_rect)
+
+    quit = Board.FONT.render('HARD', 0, Board.BLACK)
+    quit_rect = third_diff.get_rect(center=(485, 420))
+    pygame.draw.rect(screen, (255, 165, 0), (425, 400, 125, 40))
+    screen.blit(quit, quit_rect)
 
     if difficulty == 'easy':
         removed_cells = 30
