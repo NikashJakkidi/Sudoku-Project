@@ -1,6 +1,9 @@
 import pygame
 
 
+import pygame
+
+
 class Cell:
     pygame.init()
     # Constants

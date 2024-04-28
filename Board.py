@@ -104,7 +104,7 @@ class Board(Cell):
         return True
 
     def valid_row(self, row):
-        seen = set()
+        seen = set(1,2,3,4,5,6,7,8,9)
         for col in range(9):
             value = self.cells[row][col].value
             if value in seen:
@@ -114,7 +114,7 @@ class Board(Cell):
         return True
 
     def valid_column(self, col):
-        seen = set()
+        seen = set(1,2,3,4,5,6,7,8,9)
         for row in range(9):
             value = self.cells[row][col].value
             if value in seen:
@@ -124,7 +124,7 @@ class Board(Cell):
         return True
 
     def valid_box(self, row_start, col_start):
-        seen = set()
+        seen = set(1,2,3,4,5,6,7,8,9)
         for i in range(3):
             for j in range(3):
                 value = self.cells[row_start + i][col_start + j].value
