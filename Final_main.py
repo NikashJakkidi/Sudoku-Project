@@ -157,7 +157,6 @@ while True:
                 elif quit_button.collidepoint(pygame.mouse.get_pos()):
                     game_over_screen = True
                     continue
-                # if event.button == 1:
                 else:
                     click_pos = pygame.mouse.get_pos()
                     box_row, box_col = get_box_pos(click_pos)
@@ -173,6 +172,7 @@ while True:
                 if event.key == pygame.K_1:
                     cell.set_sketched_value(1)
                     board.sketch(1)
+                    cell.draw()
                     pygame.display.update()
                 if event.key == pygame.K_2:
                     cell.set_sketched_value(2)

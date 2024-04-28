@@ -34,16 +34,20 @@ class Cell:
         pygame.draw.rect(self.screen, Cell.WHITE, (x, y, Cell.CELL_SIZE, Cell.CELL_SIZE))
 
         if self.selected:
-            print("able to draw")
             pygame.draw.rect(self.screen, Cell.RED, (x, y, Cell.CELL_SIZE, Cell.CELL_SIZE), 3)
         else:
             pygame.draw.rect(self.screen, Cell.BLACK, (x, y, Cell.CELL_SIZE, Cell.CELL_SIZE), 1)
         text = Cell.FONT.render(str(self.value), 0, Cell.BLACK) if self.value != 0 else None
 
-        if text is not None:
-            print("cell called")
-            text_rect = text.get_rect(center=(x + Cell.CELL_SIZE // 2, y + Cell.CELL_SIZE // 2))
-            self.screen.blit(text, text_rect)
+        # if self.value != 0:
+        #     text_rect = text.get_rect(center=(x + Cell.CELL_SIZE // 2, y + Cell.CELL_SIZE // 2))
+        #     self.screen.blit(text, text_rect)
+        if self.value != 0:
+            text = Cell.FONT.render(str(self.value), True, (0, 0, 0))
+            self.screen.blit(text, (x + 15, y + 15))
+        elif self.sketched_value != 0:
+            text = Cell.FONT.render(str(self.sketched_value), True, (128, 128, 128))
+            self.screen.blit(text, (x + 5, y + 5))
 
     def set_sketched_value(self, value):
         self.sketched_value = value
