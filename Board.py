@@ -1,7 +1,8 @@
 from Cell import Cell
 import pygame
 
-class Board (Cell):
+
+class Board(Cell):
     pygame.init()
     # Constants
     SCREEN_WIDTH = 600
@@ -13,7 +14,7 @@ class Board (Cell):
     # Colors
     WHITE = (255, 255, 255)
     BLACK = (0, 0, 0)
-    CREAM = (255,255,245)
+    CREAM = (255, 255, 245)
     RED = (255, 0, 0)
     LIGHT_GRAY = (200, 200, 200)
 
@@ -28,8 +29,8 @@ class Board (Cell):
     def draw(self):
         for row in self.cells:
             for cell in row:
-                if cell != 0 and cell is not None:
-                    cell.draw()
+                # if cell != 0 and cell is not None:
+                cell.draw()
         # Draw bold lines for 3x3 boxes
         for i in range(0, self.width, Board.CELL_SIZE * 3):
             pygame.draw.line(self.screen, Board.BLACK, (i, 0), (i, self.height), 4)
@@ -40,8 +41,10 @@ class Board (Cell):
             self.selected_cell.selected = False
         self.selected_cell = self.cells[row][col]
         self.selected_cell.selected = True
+        print("selected")
 
     def click(self, x, y):
+        print("clicked")
         if 0 <= x < self.width and 0 <= y < self.height:
             col = x // Board.CELL_SIZE
             row = y // Board.CELL_SIZE
@@ -71,10 +74,20 @@ class Board (Cell):
         return all(cell.value != 0 for row in self.cells for cell in row)
 
     def update_board(self):
-        for row in self.cells:
-            for cell in row:
-                # Synchronize the actual board data structure with the displayed values
-                pass
+        for i in range(9):
+            for j in range(9):
+                self.board[i][j] = self.cells[i][j].value
+
+        print("Updated board:")
+        for row in self.board:
+            print(row)
+
+        # for row in self.cells:
+        # for cell in row:
+        #     # cell.value ==
+        #     self.cells
+        #     # Synchronize the actual board data structure with the displayed values
+        #     pass
 
     def find_empty(self):
         for i in range(9):
